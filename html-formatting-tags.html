@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formatting Tags Reference</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        .example {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tag-name {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .description {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 5px 0;
+        }
+        .demo {
+            background-color: #fff9e6;
+            padding: 10px;
+            border-left: 3px solid #f39c12;
+            margin-top: 8px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complete HTML Formatting Tags Reference</h1>
+    <p>This page demonstrates all major HTML formatting tags with live examples.</p>
+
+    <h2>Text Formatting Tags</h2>
+    
+    <div class="example">
+        <span class="tag-name">&lt;b&gt;</span>
+        <p class="description">Bold text (presentational)</p>
+        <div class="demo">This is <b>bold text</b> using the b tag.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;strong&gt;</span>
+        <p class="description">Strong importance (semantic bold)</p>
+        <div class="demo">This is <strong>strong text</strong> with semantic importance.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;i&gt;</span>
+        <p class="description">Italic text (presentational)</p>
+        <div class="demo">This is <i>italic text</i> using the i tag.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;em&gt;</span>
+        <p class="description">Emphasized text (semantic italic)</p>
+        <div class="demo">This is <em>emphasized text</em> with semantic meaning.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;u&gt;</span>
+        <p class="description">Underlined text</p>
+        <div class="demo">This is <u>underlined text</u>.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;s&gt;</span>
+        <p class="description">Strikethrough text (no longer accurate)</p>
+        <div class="demo">This is <s>strikethrough text</s>.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;del&gt;</span>
+        <p class="description">Deleted text (semantic strikethrough)</p>
+        <div class="demo">This is <del>deleted text</del> that was removed.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;ins&gt;</span>
+        <p class="description">Inserted text (typically underlined)</p>
+        <div class="demo">This is <ins>inserted text</ins> that was added.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;mark&gt;</span>
+        <p class="description">Highlighted/marked text</p>
+        <div class="demo">This is <mark>highlighted text</mark> for reference.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;small&gt;</span>
+        <p class="description">Smaller text</p>
+        <div class="demo">This is normal text and this is <small>smaller text</small>.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;big&gt;</span>
+        <p class="description">Bigger text (deprecated in HTML5, but still works)</p>
+        <div class="demo">This is normal text and this is <big>bigger text</big>.</div>
+    </div>
+
+    <h2>Subscript and Superscript</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;sub&gt;</span>
+        <p class="description">Subscript text</p>
+        <div class="demo">H<sub>2</sub>O is the chemical formula for water.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;sup&gt;</span>
+        <p class="description">Superscript text</p>
+        <div class="demo">E = mc<sup>2</sup> is Einstein's famous equation.</div>
+    </div>
+
+    <h2>Code and Computer Text</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;code&gt;</span>
+        <p class="description">Inline code</p>
+        <div class="demo">Use the <code>console.log()</code> function to print to the console.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;pre&gt;</span>
+        <p class="description">Preformatted text (preserves spaces and line breaks)</p>
+        <div class="demo">
+            <pre>function greet() {
+    console.log("Hello World!");
+    return true;
+}</pre>
+        </div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;kbd&gt;</span>
+        <p class="description">Keyboard input</p>
+        <div class="demo">Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;samp&gt;</span>
+        <p class="description">Sample output from a computer program</p>
+        <div class="demo">The program returned: <samp>Error: File not found</samp></div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;var&gt;</span>
+        <p class="description">Variable in mathematical or programming context</p>
+        <div class="demo">The formula is <var>y</var> = <var>mx</var> + <var>b</var>.</div>
+    </div>
+
+    <h2>Quotations and Citations</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;q&gt;</span>
+        <p class="description">Short inline quotation</p>
+        <div class="demo">He said, <q>To be or not to be, that is the question.</q></div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;blockquote&gt;</span>
+        <p class="description">Block-level quotation</p>
+        <div class="demo">
+            <blockquote cite="https://example.com">
+                This is a longer quotation that spans multiple lines and is typically displayed as an indented block of text separate from the surrounding content.
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;cite&gt;</span>
+        <p class="description">Citation or reference to a creative work</p>
+        <div class="demo">My favorite book is <cite>To Kill a Mockingbird</cite> by Harper Lee.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;abbr&gt;</span>
+        <p class="description">Abbreviation or acronym</p>
+        <div class="demo">The <abbr title="World Health Organization">WHO</abbr> is a specialized agency.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;dfn&gt;</span>
+        <p class="description">Definition term</p>
+        <div class="demo"><dfn>HTML</dfn> is the standard markup language for creating web pages.</div>
+    </div>
+
+    <h2>Directional and Language Tags</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;bdo&gt;</span>
+        <p class="description">Bi-directional override</p>
+        <div class="demo">
+            Normal text: Hello World<br>
+            Reversed: <bdo dir="rtl">Hello World</bdo>
+        </div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;bdi&gt;</span>
+        <p class="description">Bi-directional isolation</p>
+        <div class="demo">User <bdi>إيان</bdi> scored 90 points.</div>
+    </div>
+
+    <h2>Ruby Annotations (East Asian Typography)</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;ruby&gt;, &lt;rt&gt;, &lt;rp&gt;</span>
+        <p class="description">Ruby annotations for showing pronunciation</p>
+        <div class="demo">
+            <ruby>
+                漢 <rp>(</rp><rt>かん</rt><rp>)</rp>
+                字 <rp>(</rp><rt>じ</rt><rp>)</rp>
+            </ruby>
+        </div>
+    </div>
+
+    <h2>Time and Progress</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;time&gt;</span>
+        <p class="description">Machine-readable time/date</p>
+        <div class="demo">The meeting is scheduled for <time datetime="2026-02-07T14:00">February 7, 2026 at 2:00 PM</time>.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;progress&gt;</span>
+        <p class="description">Progress indicator</p>
+        <div class="demo">Download progress: <progress value="70" max="100">70%</progress></div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;meter&gt;</span>
+        <p class="description">Scalar measurement within a known range</p>
+        <div class="demo">Disk usage: <meter value="0.6">60%</meter></div>
+    </div>
+
+    <h2>Semantic Tags</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;address&gt;</span>
+        <p class="description">Contact information</p>
+        <div class="demo">
+            <address>
+                Written by John Doe<br>
+                Email: john@example.com<br>
+                123 Main Street, City, State
+            </address>
+        </div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;details&gt; and &lt;summary&gt;</span>
+        <p class="description">Collapsible disclosure widget</p>
+        <div class="demo">
+            <details>
+                <summary>Click to expand</summary>
+                This content is hidden by default and can be toggled by clicking the summary.
+            </details>
+        </div>
+    </div>
+
+    <h2>Special Characters Example</h2>
+
+    <div class="example">
+        <span class="tag-name">HTML Entities</span>
+        <p class="description">Special characters using HTML entities</p>
+        <div class="demo">
+            &lt; (less than), &gt; (greater than), &amp; (ampersand), &quot; (quote), &copy; (copyright), &reg; (registered), &trade; (trademark), &euro; (euro), &pound; (pound)
+        </div>
+    </div>
+
+    <h2>Break and Horizontal Rule</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;br&gt;</span>
+        <p class="description">Line break</p>
+        <div class="demo">This is line one.<br>This is line two after a break.</div>
+    </div>
+
+    <div class="example">
+        <span class="tag-name">&lt;hr&gt;</span>
+        <p class="description">Horizontal rule (thematic break)</p>
+        <div class="demo">
+            Content above the line.
+            <hr>
+            Content below the line.
+        </div>
+    </div>
+
+    <h2>Word Break Opportunity</h2>
+
+    <div class="example">
+        <span class="tag-name">&lt;wbr&gt;</span>
+        <p class="description">Word break opportunity</p>
+        <div class="demo">This is a very<wbr>long<wbr>word<wbr>that<wbr>can<wbr>break<wbr>at<wbr>specified<wbr>points.</div>
+    </div>
+
+    <h2>Combination Example</h2>
+
+    <div class="example">
+        <span class="tag-name">Multiple Tags Combined</span>
+        <div class="demo">
+            <p>This paragraph demonstrates <strong>multiple</strong> <em>formatting</em> tags used <mark>together</mark>. You can have <code>code snippets</code>, <sup>superscript</sup>, <sub>subscript</sub>, and even <del>deleted</del> <ins>inserted</ins> text all in one place!</p>
+        </div>
+    </div>
+
+    <footer style="margin-top: 50px; padding: 20px; background-color: #34495e; color: white; border-radius: 5px; text-align: center;">
+        <p>HTML Formatting Tags Reference - All examples are rendered live on this page.</p>
+    </footer>
+</body>
+</html>

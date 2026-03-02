@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Triangle Image Map</title>
+
+<style>
+.highlight {
+    position: absolute;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+</style>
+</head>
+<body>
+  <!-- Image Map Generated -->
+<img src="https://engrdu.com/wp-content/uploads/2024/11/Shapes-Names.png" usemap="#image-map">
+
+<map name="image-map">
+    <area target="_blank" alt="Image of circle" title="" href="" coords="130,223,45.5" shape="circle">
+
+    <area target="_blank" alt="Image of square" title="" href="" coords="420,265,325,180" shape="rect">
+
+    <area target="_blank" alt="Image of rectangle" title="" href="" coords="697,258,546,188" shape="rect">
+
+    <area target="_blank" alt="Image of rectangle" title="" href="" coords="901,266,801,267,851,177" shape="poly">
+
+    <area target="_blank" alt="Image of right rectangle" title="" href="" coords="1036,278,1155,277,1038,158" shape="poly">
+
+    <area target="_blank" alt="Image of right pentagram" title="" href="" coords="1337,219,60" shape="circle">
+
+    <area target="_blank" alt="Image of oval" title="" href="" coords="130,399,63" shape="circle">
+
+</map>
+
+<script>
+window.addEventListener('load', function() {
+    const img = document.querySelector('img[usemap]');
+    if (!img) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+    wrapper.style.display = 'inline-block';
+    
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img); // Move img into wrapper
+
+    const mapName = img.getAttribute('usemap').substring(1);
+    const map = document.querySelector(`map[name="${mapName}"]`);
+    if (!map) return;
+    
+    const areas = map.querySelectorAll('area');
+
+    areas.forEach(area => {
+        const coords = area.coords.split(',').map(Number);
+        const shape = area.getAttribute('shape');
+        
+        const highlight = document.createElement('div');
+        highlight.className = 'highlight';
+        highlight.style.border = 'none'; // Ensure no border for all shapes
+
+        if (shape === 'rect') {
+            const [x1, y1, x2, y2] = coords;
+            highlight.style.left = x1 + 'px';
+            highlight.style.top = y1 + 'px';
+            highlight.style.width = (x2 - x1) + 'px';
+            highlight.style.height = (y2 - y1) + 'px';
+        } else if (shape === 'circle') {
+            const [x, y, r] = coords;
+            highlight.style.left = (x - r) + 'px';
+            highlight.style.top = (y - r) + 'px';
+            highlight.style.width = (r * 2) + 'px';
+            highlight.style.height = (r * 2) + 'px';
+            highlight.style.borderRadius = '50%';
+        } else if (shape === 'poly') {
+            let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+            const points = [];
+            for (let i = 0; i < coords.length; i += 2) {
+                const x = coords[i];
+                const y = coords[i + 1];
+                points.push({x, y});
+                minX = Math.min(minX, x);
+                minY = Math.min(minY, y);
+                maxX = Math.max(maxX, x);
+                maxY = Math.max(maxY, y);
+            }
+            highlight.style.left = minX + 'px';
+            highlight.style.top = minY + 'px';
+            highlight.style.width = (maxX - minX) + 'px';
+            highlight.style.height = (maxY - minY) + 'px';
+            
+            const clipPathPoints = points.map(p => `${p.x - minX}px ${p.y - minY}px`).join(',');
+            highlight.style.clipPath = `polygon(${clipPathPoints})`;
+            highlight.style.backgroundColor = 'rgba(144, 238, 144, 0.5)';
+            highlight.style.border = 'none';
+        }
+        
+        wrapper.appendChild(highlight);
+
+        // Draw points for coordinates
+        let pointsToDraw = [];
+        if (shape === 'rect') {
+            pointsToDraw.push({x: coords[0], y: coords[1]});
+            pointsToDraw.push({x: coords[2], y: coords[3]});
+        } else if (shape === 'circle') {
+            pointsToDraw.push({x: coords[0], y: coords[1]});
+        } else if (shape === 'poly') {
+            for (let i = 0; i < coords.length; i += 2) {
+                pointsToDraw.push({x: coords[i], y: coords[i+1]});
+            }
+        }
+
+        pointsToDraw.forEach(p => {
+            const point = document.createElement('div');
+            point.style.position = 'absolute';
+            point.style.left = p.x + 'px';
+            point.style.top = p.y + 'px';
+            point.style.width = '4px';
+            point.style.height = '4px';
+            point.style.backgroundColor = 'red';
+            point.style.borderRadius = '50%';
+            point.style.transform = 'translate(-50%, -50%)';
+            point.style.zIndex = '20';
+            point.style.pointerEvents = 'none';
+            wrapper.appendChild(point);
+        });
+    });
+});
+</script>
+
+</body>
+</html>
